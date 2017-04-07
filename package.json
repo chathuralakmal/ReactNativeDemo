@@ -9,7 +9,9 @@
   "dependencies": {
     "react": "15.4.2",
     "react-native": "0.42.3",
-    "react-native-floating-label-text-input": "^0.1.4"
+    "react-native-floating-label-text-input": "^0.1.4",
+    "react-native-indicator": "^0.6.7",
+    "react-native-spinkit": "^1.0.2"
   },
   "devDependencies": {
     "babel-jest": "19.0.0",

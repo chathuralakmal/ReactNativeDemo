@@ -9,17 +9,32 @@ import {
   StyleSheet,
   Text,
   View,
-  Image
+  Image,
+  KeyboardAvoidingView,
 } from 'react-native';
+
+import {CirclesLoader, PulseLoader, TextLoader, DotsLoader, LinesLoader} from 'react-native-indicator';
 import Loginform from './Loginform';
 
+var Spinner = require('react-native-spinkit');
+
 export default class Login extends Component {
+
+
   render() {
+
+
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.logoContainor}>
           <Image style={styles.logo} source={require('../../images/login_logo.png')}/>
         </View>
+
+        <View style={styles.spinnerContainer}>
+            <LinesLoader />
+            {/*<TextLoader text="Please wait" />*/}
+        </View>
+
         <View style={styles.formContainor}>
             <Loginform />
         </View>
@@ -27,7 +42,7 @@ export default class Login extends Component {
         <View style={styles.footerContainor}>
           <Text>Copyright 2017 WishQue</Text>
         </View>
-      </View>
+      </KeyboardAvoidingView>
      
     );
   }
@@ -36,15 +51,22 @@ export default class Login extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
   },
   logoContainor: {
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  spinnerContainer: {
+   
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   formContainor: {
-    
+  
   },
   logo: {
     width: 150,
